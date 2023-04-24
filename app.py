@@ -125,21 +125,7 @@ def add_cols(form: schemas.ColumnsSchema):
         error_msg = "Não foi possível salvar novo item :/"
         return {"message": error_msg}, 400
 
-# @app.get('/column',tags=[column_tag],
-#          responses={"200": schemas.ColumnsViewSchema, "404": schemas.ErrorSchema})
-# def get_column(query: schemas.ColumnsConsultaSchema):
-#     """Consulta a informação de uma Coluna no Banco de Dados
-#     """
-#     #identifica a coluna a ser consultada
-#     column_id = query.column_id
-#     session = Session()
-#     #recupera a coluna no banco de dados
-#     column = session.query(Columns).filter(Columns.pk_column == column_id).first()
-#     if not column:
-#         error_msg = "Item não encontrado na base :/"
-#         return {"message": error_msg}, 404
-#     else:
-#         return schemas.show_column(column), 200
+
 
 @app.post('/add_card', tags=[card_tag],
          responses={"200": schemas.CardViewSchema, "409": schemas.ErrorSchema, "400": schemas.ErrorSchema})
@@ -173,21 +159,7 @@ def add_card(form: schemas.CardSchema):
         error_msg = "Não foi possível salvar novo item :/"
         return {"message": error_msg}, 400
     
-# @app.get('/card',tags=[card_tag],
-#          responses={"200": schemas.CardViewSchema, "404": schemas.ErrorSchema})
-# def get_card(query: schemas.CardConsultaSchema):
-#     """Consulta a um Card no banco de dados
-#     """
-#     #identifica o Card a ser consultado no banco
-#     card_id = query.card_id
-#     session = Session()
-#     #consulta o Card no banco com base no id
-#     card = session.query(Card).filter(Card.pk_card == card_id).first()
-#     if not card:
-#         error_msg = "Item não encontrado na base :/"
-#         return {"message": error_msg}, 404
-#     else:
-#         return schemas.show_card(card), 200
+
 
 @app.patch('/move_card', tags=[card_tag],
            responses={"200": schemas.CardViewSchema, "400": schemas.ErrorSchema})
