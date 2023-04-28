@@ -10,7 +10,7 @@ from model.board import Board
 
 
 # url de acesso ao banco (essa é uma url de acesso ao sqlite local)
-db_url = 'sqlite:///database/db.sqlite3'
+db_url = 'sqlite:///db.sqlite3'
 
 # cria a engine de conexão com o banco
 engine = create_engine(db_url, echo=False)
