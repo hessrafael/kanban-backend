@@ -200,7 +200,7 @@ def del_card(query: schemas.CardConsultaSchema):
 
     if count:
         #retorna a representação da mensagem de confirmação
-        return {"message": "Produto removido", "id": card_id}
+        return {"message": "Card removido", "id": card_id}
     else:
         #se o produto não foi encontrado
         error_msg = "Card não encontrado na base :/"        
